@@ -7,19 +7,14 @@
 
 namespace Spryker\Zed\FileManager\Business\Model;
 
-interface FileVersionInterface
+use Generated\Shared\Transfer\FileDirectoryTransfer;
+
+interface FileDirectorySaverInterface
 {
     /**
-     * @param int|null $idFile
+     * @param \Generated\Shared\Transfer\FileDirectoryTransfer $fileDirectoryTransfer
      *
      * @return int
      */
-    public function getNextVersionNumber($idFile = null);
-
-    /**
-     * @param int $versionNumber
-     *
-     * @return string
-     */
-    public function getNextVersionName($versionNumber);
+    public function save(FileDirectoryTransfer $fileDirectoryTransfer);
 }
