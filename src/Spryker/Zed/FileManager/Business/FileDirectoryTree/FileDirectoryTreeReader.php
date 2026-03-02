@@ -20,9 +20,6 @@ class FileDirectoryTreeReader implements FileDirectoryTreeReaderInterface
      */
     protected $repository;
 
-    /**
-     * @param \Spryker\Zed\FileManager\Persistence\FileManagerRepositoryInterface $repository
-     */
     public function __construct(FileManagerRepositoryInterface $repository)
     {
         $this->repository = $repository;

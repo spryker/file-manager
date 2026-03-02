@@ -26,9 +26,6 @@ use Spryker\Zed\FileManager\FileManagerConfig;
  */
 class FileContentTest extends Unit
 {
-    /**
-     * @return \Spryker\Zed\FileManager\Dependency\Service\FileManagerToFileSystemServiceInterface
-     */
     protected function getFileSystemServiceMock(): FileManagerToFileSystemServiceInterface
     {
         return $this->getMockBuilder(FileManagerToFileSystemServiceInterface::class)->getMock();
@@ -42,9 +39,6 @@ class FileContentTest extends Unit
         return $this->getMockBuilder(FileManagerConfig::class)->getMock();
     }
 
-    /**
-     * @return void
-     */
     public function testSave(): void
     {
         $fileSystemServiceMock = $this->getFileSystemServiceMock();
@@ -63,9 +57,6 @@ class FileContentTest extends Unit
         $fileContent->save($fileTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testDelete(): void
     {
         $fileSystemServiceMock = $this->getFileSystemServiceMock();
@@ -80,9 +71,6 @@ class FileContentTest extends Unit
         $fileContent->delete('report.txt');
     }
 
-    /**
-     * @return void
-     */
     public function testRead(): void
     {
         $fileSystemServiceMock = $this->getFileSystemServiceMock();

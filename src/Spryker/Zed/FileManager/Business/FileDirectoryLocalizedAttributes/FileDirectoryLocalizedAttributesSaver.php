@@ -18,19 +18,11 @@ class FileDirectoryLocalizedAttributesSaver implements FileDirectoryLocalizedAtt
      */
     protected $entityManager;
 
-    /**
-     * @param \Spryker\Zed\FileManager\Persistence\FileManagerEntityManagerInterface $entityManager
-     */
     public function __construct(FileManagerEntityManagerInterface $entityManager)
     {
         $this->entityManager = $entityManager;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\FileDirectoryTransfer $fileDirectoryTransfer
-     *
-     * @return void
-     */
     public function save(FileDirectoryTransfer $fileDirectoryTransfer): void
     {
         foreach ($fileDirectoryTransfer->getFileDirectoryLocalizedAttributes() as $fileDirectoryLocalizedAttributesTransfer) {
@@ -39,12 +31,6 @@ class FileDirectoryLocalizedAttributesSaver implements FileDirectoryLocalizedAtt
         }
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\FileDirectoryLocalizedAttributesTransfer $fileDirectoryLocalizedAttributesTransfer
-     * @param \Generated\Shared\Transfer\FileDirectoryTransfer $fileDirectoryTransfer
-     *
-     * @return void
-     */
     protected function prepareFileDirectoryLocalizedAttributesTransfer(
         FileDirectoryLocalizedAttributesTransfer $fileDirectoryLocalizedAttributesTransfer,
         FileDirectoryTransfer $fileDirectoryTransfer

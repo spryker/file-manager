@@ -18,9 +18,6 @@ class FileLocalizedAttributesSaver implements FileLocalizedAttributesSaverInterf
      */
     protected $entityManager;
 
-    /**
-     * @param \Spryker\Zed\FileManager\Persistence\FileManagerEntityManagerInterface $entityManager
-     */
     public function __construct(FileManagerEntityManagerInterface $entityManager)
     {
         $this->entityManager = $entityManager;
@@ -39,12 +36,6 @@ class FileLocalizedAttributesSaver implements FileLocalizedAttributesSaverInterf
         }
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\FileLocalizedAttributesTransfer $fileLocalizedAttributesTransfer
-     * @param \Generated\Shared\Transfer\FileManagerDataTransfer $fileManagerDataTransfer
-     *
-     * @return void
-     */
     protected function prepareFileLocalizedAttributesTransfer(
         FileLocalizedAttributesTransfer $fileLocalizedAttributesTransfer,
         FileManagerDataTransfer $fileManagerDataTransfer

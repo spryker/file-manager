@@ -75,9 +75,6 @@ class FileManagerFacadeTest extends Unit
      */
     protected $testDataFileSystemRootDirectory;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -124,20 +121,12 @@ class FileManagerFacadeTest extends Unit
         $this->tester->insertDbRecords();
     }
 
-    /**
-     * @return void
-     */
     protected function tearDown(): void
     {
         $this->tester->resetDb();
         $this->tester->clearFiles();
     }
 
-    /**
-     * @param \Spryker\Service\Kernel\Container $container
-     *
-     * @return \Spryker\Service\Kernel\Container
-     */
     protected function setupContainerAndFlysystemService(ServiceContainer $container): ServiceContainer
     {
         $flysystemContainer = new ServiceContainer();
@@ -184,9 +173,6 @@ class FileManagerFacadeTest extends Unit
         return $container;
     }
 
-    /**
-     * @return void
-     */
     public function testReadsLatestVersionOfFile(): void
     {
         $fileManagerDataTransfer = $this->facade->findFileByIdFile($this->tester->getIdFile());
@@ -200,25 +186,16 @@ class FileManagerFacadeTest extends Unit
         $this->assertSame(10, $fileManagerDataTransfer->getFileInfo()->getSize());
     }
 
-    /**
-     * @return void
-     */
     public function testDelete(): void
     {
         $this->assertTrue($this->facade->deleteFile($this->tester->getIdFile()));
     }
 
-    /**
-     * @return void
-     */
     public function testDeleteFileInfo(): void
     {
         $this->assertTrue($this->facade->deleteFileInfo($this->tester->getIdFirstFileInfo()));
     }
 
-    /**
-     * @return void
-     */
     public function testSave(): void
     {
         // Arrange
@@ -234,9 +211,6 @@ class FileManagerFacadeTest extends Unit
         $this->assertInstanceOf(SpyFile::class, $file);
     }
 
-    /**
-     * @return void
-     */
     public function testRollback(): void
     {
         $this->facade->rollbackFile($this->tester->getIdFirstFileInfo());
@@ -249,9 +223,6 @@ class FileManagerFacadeTest extends Unit
         $this->assertSame(10, $fileManagerDataTransfer->getFileInfo()->getSize());
     }
 
-    /**
-     * @return void
-     */
     public function testSaveDirectory(): void
     {
         $fileDirectoryTransfer = new FileDirectoryTransfer();
@@ -288,9 +259,6 @@ class FileManagerFacadeTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testFindFileDirectoryTree(): void
     {
         $tree = $this->facade->findFileDirectoryTree();
@@ -301,9 +269,6 @@ class FileManagerFacadeTest extends Unit
         }
     }
 
-    /**
-     * @return void
-     */
     public function testUpdateFileDirectoryTreeHierarchy(): void
     {
         $tree = $this->facade->findFileDirectoryTree();
@@ -344,9 +309,6 @@ class FileManagerFacadeTest extends Unit
         $this->assertEquals($this->tester->getIdSecondFileDirectory(), $thirdNode->getFileDirectory()->getIdFileDirectory());
     }
 
-    /**
-     * @return void
-     */
     public function testDeleteFileDirectory(): void
     {
         $this->assertTrue(
@@ -354,9 +316,6 @@ class FileManagerFacadeTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testSaveMimeType(): void
     {
         $mimeTypeTransfer = $this->findMimeTypeById($this->tester->getIdMimeType())
@@ -376,9 +335,6 @@ class FileManagerFacadeTest extends Unit
         $this->assertEquals($mimeTypeTransfer, $this->findMimeTypeById($this->tester->getIdMimeType()));
     }
 
-    /**
-     * @return void
-     */
     public function testUpdateMimeTypeSettings(): void
     {
         $mimeTypeCollectionTransfer = new MimeTypeCollectionTransfer();
@@ -395,9 +351,6 @@ class FileManagerFacadeTest extends Unit
         $this->assertFalse($mimeTypeTransfer->getIsAllowed());
     }
 
-    /**
-     * @return void
-     */
     public function testDeleteMimeType(): void
     {
         $mimeTypeTransfer = $this->findMimeTypeById($this->tester->getIdMimeType());
@@ -409,9 +362,6 @@ class FileManagerFacadeTest extends Unit
         $this->assertNull($this->findMimeTypeById(1)->getIdMimeType());
     }
 
-    /**
-     * @return void
-     */
     public function testGetFilesByIds(): void
     {
         // Arrange
@@ -431,9 +381,6 @@ class FileManagerFacadeTest extends Unit
         }
     }
 
-    /**
-     * @return void
-     */
     public function testGetFileInfoVersionsCountReturnsCorrectNumberOfFileVersions(): void
     {
         // Arrange
@@ -446,9 +393,6 @@ class FileManagerFacadeTest extends Unit
         $this->assertSame(2, $count);
     }
 
-    /**
-     * @return void
-     */
     public function testDeleteFileExecutesThePreDeletePlugins(): void
     {
         // Act
@@ -458,11 +402,6 @@ class FileManagerFacadeTest extends Unit
         $this->assertTrue($result);
     }
 
-    /**
-     * @param int $idMimeType
-     *
-     * @return \Generated\Shared\Transfer\MimeTypeTransfer
-     */
     protected function findMimeTypeById(int $idMimeType): MimeTypeTransfer
     {
         $mimeTypeTransfer = new MimeTypeTransfer();
@@ -547,9 +486,6 @@ class FileManagerFacadeTest extends Unit
         return $filePreDeletePluginMock;
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\FileManagerDataTransfer
-     */
     protected function createFileManagerDataTransfer(): FileManagerDataTransfer
     {
         $fileInfo = new FileInfoTransfer();

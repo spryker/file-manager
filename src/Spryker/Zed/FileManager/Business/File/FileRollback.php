@@ -28,11 +28,6 @@ class FileRollback implements FileRollbackInterface
      */
     protected $repository;
 
-    /**
-     * @param \Spryker\Zed\FileManager\Persistence\FileManagerEntityManagerInterface $entityManager
-     * @param \Spryker\Zed\FileManager\Persistence\FileManagerRepositoryInterface $repository
-     * @param \Spryker\Zed\FileManager\Business\File\FileVersionInterface $fileVersion
-     */
     public function __construct(
         FileManagerEntityManagerInterface $entityManager,
         FileManagerRepositoryInterface $repository,

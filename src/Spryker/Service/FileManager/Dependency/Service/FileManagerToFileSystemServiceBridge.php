@@ -25,31 +25,16 @@ class FileManagerToFileSystemServiceBridge implements FileManagerToFileSystemSer
         $this->fileSystemService = $fileSystemService;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\FileSystemQueryTransfer $fileSystemQueryTransfer
-     *
-     * @return string
-     */
     public function read(FileSystemQueryTransfer $fileSystemQueryTransfer): string
     {
         return $this->fileSystemService->read($fileSystemQueryTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\FileSystemStreamTransfer $fileSystemStreamTransfer
-     *
-     * @return mixed
-     */
     public function readStream(FileSystemStreamTransfer $fileSystemStreamTransfer): mixed
     {
         return $this->fileSystemService->readStream($fileSystemStreamTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\FileSystemQueryTransfer $fileSystemQueryTransfer
-     *
-     * @return string
-     */
     public function getMimeType(FileSystemQueryTransfer $fileSystemQueryTransfer): string
     {
         return $this->fileSystemService->getMimeType($fileSystemQueryTransfer);

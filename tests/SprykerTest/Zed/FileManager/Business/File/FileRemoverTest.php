@@ -52,9 +52,6 @@ class FileRemoverTest extends Unit
         return $this->getMockBuilder(FileManagerEntityManagerInterface::class)->getMock();
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\FileTransfer
-     */
     protected function getMockedFile(): FileTransfer
     {
         $fileTransfer = new FileTransfer();
@@ -64,9 +61,6 @@ class FileRemoverTest extends Unit
         return $fileTransfer;
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\FileInfoTransfer
-     */
     protected function getMockedFileInfo(): FileInfoTransfer
     {
         $fileInfoTransfer = new FileInfoTransfer();
@@ -79,9 +73,6 @@ class FileRemoverTest extends Unit
         return $fileInfoTransfer;
     }
 
-    /**
-     * @return void
-     */
     public function testDelete(): void
     {
         $fileContentMock = $this->createFileContentMock();
@@ -110,9 +101,6 @@ class FileRemoverTest extends Unit
         $this->assertTrue($fileRemover->delete(1));
     }
 
-    /**
-     * @return void
-     */
     public function testDeleteFileInfo(): void
     {
         $fileContentMock = $this->createFileContentMock();

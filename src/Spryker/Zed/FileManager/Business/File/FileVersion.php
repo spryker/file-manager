@@ -26,9 +26,6 @@ class FileVersion implements FileVersionInterface
      */
     protected $repository;
 
-    /**
-     * @param \Spryker\Zed\FileManager\Persistence\FileManagerRepositoryInterface $repository
-     */
     public function __construct(FileManagerRepositoryInterface $repository)
     {
         $this->repository = $repository;

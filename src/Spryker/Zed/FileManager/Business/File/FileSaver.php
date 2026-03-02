@@ -187,11 +187,6 @@ class FileSaver implements FileSaverInterface
         );
     }
 
-    /**
-     * @param string|null $fileName
-     *
-     * @return string
-     */
     protected function sanitizeFileName(?string $fileName = null): string
     {
         $fileName = mb_ereg_replace("([^\w\s\d\-_~,;\[\]\(\).])", '', (string)$fileName);
@@ -232,11 +227,6 @@ class FileSaver implements FileSaverInterface
         return $this->config->getFileNameVersionDelimiter();
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\FileManagerDataCollectionTransfer $fileManagerDataCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\FileManagerDataCollectionTransfer
-     */
     protected function executeFileManagerDataCollectionExpanderPreSavePlugins(
         FileManagerDataCollectionTransfer $fileManagerDataCollectionTransfer
     ): FileManagerDataCollectionTransfer {
@@ -247,11 +237,6 @@ class FileSaver implements FileSaverInterface
         return $fileManagerDataCollectionTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\FileManagerDataTransfer $fileManagerDataTransfer
-     *
-     * @return \Generated\Shared\Transfer\FileManagerDataTransfer
-     */
     protected function expandFileManagerDataTransfer(
         FileManagerDataTransfer $fileManagerDataTransfer
     ): FileManagerDataTransfer {

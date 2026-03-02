@@ -42,12 +42,6 @@ class FileDirectoryRemover implements FileDirectoryRemoverInterface
      */
     protected $config;
 
-    /**
-     * @param \Spryker\Zed\FileManager\Persistence\FileManagerEntityManagerInterface $entityManager
-     * @param \Spryker\Zed\FileManager\Persistence\FileManagerRepositoryInterface $repository
-     * @param \Spryker\Zed\FileManager\Dependency\Service\FileManagerToFileSystemServiceInterface $fileSystemService
-     * @param \Spryker\Zed\FileManager\FileManagerConfig $config
-     */
     public function __construct(
         FileManagerEntityManagerInterface $entityManager,
         FileManagerRepositoryInterface $repository,

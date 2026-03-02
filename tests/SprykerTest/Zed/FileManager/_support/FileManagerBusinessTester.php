@@ -86,9 +86,6 @@ class FileManagerBusinessTester extends Actor
      */
     protected $idSubFileDirectory;
 
-    /**
-     * @return void
-     */
     public function insertDbRecords(): void
     {
         $this->resetDb();
@@ -99,9 +96,6 @@ class FileManagerBusinessTester extends Actor
         $this->insertMimeType();
     }
 
-    /**
-     * @return void
-     */
     public function resetDb(): void
     {
         $this->ensureDatabaseTableIsEmpty(SpyFileQuery::create());
@@ -110,11 +104,6 @@ class FileManagerBusinessTester extends Actor
         $this->ensureDatabaseTableIsEmpty(SpyFileDirectoryQuery::create());
     }
 
-    /**
-     * @param string $fileName
-     *
-     * @return string
-     */
     public function getDocumentFullFileName(string $fileName): string
     {
         $rootDirectory = Configuration::dataDir() . static::ROOT_DIRECTORY . static::PATH_DOCUMENT;
@@ -125,65 +114,41 @@ class FileManagerBusinessTester extends Actor
         return $rootDirectory . $fileName;
     }
 
-    /**
-     * @return void
-     */
     public function clearFiles(): void
     {
         exec('rm -rf ' . $this->getDocumentFullFileName('*'));
     }
 
-    /**
-     * @return int
-     */
     public function getIdFile(): int
     {
         return $this->idFile;
     }
 
-    /**
-     * @return int
-     */
     public function getIdFirstFileInfo(): int
     {
         return $this->idFirstFileInfo;
     }
 
-    /**
-     * @return int
-     */
     public function getIdSecondFileInfo(): int
     {
         return $this->idSecondFileInfo;
     }
 
-    /**
-     * @return int
-     */
     public function getIdMimeType(): int
     {
         return $this->idMimeType;
     }
 
-    /**
-     * @return int
-     */
     public function getIdFirstFileDirectory(): int
     {
         return $this->idFirstFileDirectory;
     }
 
-    /**
-     * @return int
-     */
     public function getIdSecondFileDirectory(): int
     {
         return $this->idSecondFileDirectory;
     }
 
-    /**
-     * @return int
-     */
     public function getIdSubFileDirectory(): int
     {
         return $this->idSubFileDirectory;
@@ -222,9 +187,6 @@ class FileManagerBusinessTester extends Actor
         return $idFiles;
     }
 
-    /**
-     * @return \Orm\Zed\FileManager\Persistence\SpyFile
-     */
     protected function insertFile(): SpyFile
     {
         $file = new SpyFile();
@@ -237,9 +199,6 @@ class FileManagerBusinessTester extends Actor
         return $file;
     }
 
-    /**
-     * @return void
-     */
     protected function insertMimeType(): void
     {
         $mimeType = new SpyMimeType();
@@ -251,11 +210,6 @@ class FileManagerBusinessTester extends Actor
         $this->idMimeType = $mimeType->getIdMimeType();
     }
 
-    /**
-     * @param \Orm\Zed\FileManager\Persistence\SpyFile $file
-     *
-     * @return void
-     */
     protected function insertFileInfos(SpyFile $file): void
     {
         $fileInfo = new SpyFileInfo();
@@ -287,9 +241,6 @@ class FileManagerBusinessTester extends Actor
         $this->idSecondFileInfo = $fileInfo->getIdFileInfo();
     }
 
-    /**
-     * @return void
-     */
     protected function insertFileDirectories(): void
     {
         $fileDirectory = new SpyFileDirectory();

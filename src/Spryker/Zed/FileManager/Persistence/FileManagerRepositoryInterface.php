@@ -88,17 +88,7 @@ interface FileManagerRepositoryInterface
      */
     public function getFilesByIds(array $idFiles): array;
 
-    /**
-     * @param int $idFile
-     *
-     * @return int
-     */
     public function getFileInfoVersionsCount(int $idFile): int;
 
-    /**
-     * @param \Generated\Shared\Transfer\FileCriteriaTransfer $fileCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\FileCollectionTransfer
-     */
     public function getFileCollection(FileCriteriaTransfer $fileCriteriaTransfer): FileCollectionTransfer;
 }

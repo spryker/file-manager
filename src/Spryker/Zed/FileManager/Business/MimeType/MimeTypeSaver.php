@@ -25,10 +25,6 @@ class MimeTypeSaver implements MimeTypeSaverInterface
      */
     protected $repository;
 
-    /**
-     * @param \Spryker\Zed\FileManager\Persistence\FileManagerEntityManagerInterface $entityManager
-     * @param \Spryker\Zed\FileManager\Persistence\FileManagerRepositoryInterface $repository
-     */
     public function __construct(FileManagerEntityManagerInterface $entityManager, FileManagerRepositoryInterface $repository)
     {
         $this->entityManager = $entityManager;

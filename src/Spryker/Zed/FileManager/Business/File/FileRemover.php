@@ -125,11 +125,6 @@ class FileRemover implements FileRemoverInterface
         return $this->entityManager->deleteFileInfo($fileInfoTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\FileTransfer $fileTransfer
-     *
-     * @return \Generated\Shared\Transfer\FileCollectionTransfer
-     */
     protected function executeFilePreDeletePlugins(FileTransfer $fileTransfer): FileCollectionTransfer
     {
         $fileCollectionTransfer = new FileCollectionTransfer();

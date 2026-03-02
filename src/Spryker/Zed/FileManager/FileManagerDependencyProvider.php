@@ -71,11 +71,6 @@ class FileManagerDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addUtilEncodingService(Container $container): Container
     {
         $container->set(static::SERVICE_UTIL_ENCODING, function (Container $container) {
@@ -103,11 +98,6 @@ class FileManagerDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addFileManagerDataCollectionExpanderPlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_FILE_MANAGER_DATA_COLLECTION_EXPANDER, function () {
@@ -117,11 +107,6 @@ class FileManagerDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addFileManagerDataCollectionExpanderPreSavePlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_FILE_MANAGER_DATA_COLLECTION_EXPANDER_PRE_SAVE, function () {
@@ -131,11 +116,6 @@ class FileManagerDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addFilePreDeletePlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_FILE_PRE_DELETE, function () {

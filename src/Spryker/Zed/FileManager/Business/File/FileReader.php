@@ -163,11 +163,6 @@ class FileReader implements FileReaderInterface
         return null;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\FileManagerDataCollectionTransfer $fileManagerDataCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\FileManagerDataCollectionTransfer
-     */
     protected function executeFileManagerDataCollectionExpanderPlugins(
         FileManagerDataCollectionTransfer $fileManagerDataCollectionTransfer
     ): FileManagerDataCollectionTransfer {
@@ -178,12 +173,6 @@ class FileReader implements FileReaderInterface
         return $fileManagerDataCollectionTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\FileTransfer $fileTransfer
-     * @param int|null $idFileInfo
-     *
-     * @return \Generated\Shared\Transfer\FileManagerDataTransfer
-     */
     protected function createFileManagerDataTransfer(FileTransfer $fileTransfer, ?int $idFileInfo = null): FileManagerDataTransfer
     {
         $fileManagerDataTransfer = new FileManagerDataTransfer();

@@ -83,9 +83,6 @@ class FileManagerPersistenceFactory extends AbstractPersistenceFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\FileManager\Dependency\Service\FileManagerToUtilEncodingServiceInterface
-     */
     public function getUtilEncodingService(): FileManagerToUtilEncodingServiceInterface
     {
         return $this->getProvidedDependency(FileManagerDependencyProvider::SERVICE_UTIL_ENCODING);

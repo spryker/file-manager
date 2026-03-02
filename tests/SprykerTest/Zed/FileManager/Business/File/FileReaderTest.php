@@ -44,9 +44,6 @@ class FileReaderTest extends Unit
         return $this->getMockBuilder(FileManagerRepositoryInterface::class)->getMock();
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\FileTransfer
-     */
     protected function getMockedFile(): FileTransfer
     {
         $fileTransfer = new FileTransfer();
@@ -58,9 +55,6 @@ class FileReaderTest extends Unit
         return $fileTransfer;
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\FileInfoTransfer
-     */
     protected function getMockedFileInfo(): FileInfoTransfer
     {
         $fileInfoTransfer = new FileInfoTransfer();
@@ -74,11 +68,6 @@ class FileReaderTest extends Unit
         return $fileInfoTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\FileManagerDataTransfer $fileManagerDataTransfer
-     *
-     * @return void
-     */
     protected function assertFileInfo(FileManagerDataTransfer $fileManagerDataTransfer): void
     {
         $this->assertSame('the content of the file', $fileManagerDataTransfer->getContent());
@@ -89,9 +78,6 @@ class FileReaderTest extends Unit
         $this->assertSame('report.txt', $fileManagerDataTransfer->getFileInfo()->getStorageFileName());
     }
 
-    /**
-     * @return void
-     */
     public function testRead(): void
     {
         //Arrange
@@ -117,9 +103,6 @@ class FileReaderTest extends Unit
         $this->assertFileInfo($fileReader->readFileByIdFileInfo(1));
     }
 
-    /**
-     * @return void
-     */
     public function testReadLatestByFileId(): void
     {
         //Arrange

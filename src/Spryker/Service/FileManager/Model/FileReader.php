@@ -32,10 +32,6 @@ class FileReader implements FileReaderInterface
      */
     protected $config;
 
-    /**
-     * @param \Spryker\Service\FileManager\Dependency\Service\FileManagerToFileSystemServiceInterface $fileSystem
-     * @param \Spryker\Service\FileManager\FileManagerConfig $config
-     */
     public function __construct(FileManagerToFileSystemServiceInterface $fileSystem, FileManagerConfig $config)
     {
         $this->fileSystem = $fileSystem;

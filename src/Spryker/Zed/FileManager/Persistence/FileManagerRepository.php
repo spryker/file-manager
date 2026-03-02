@@ -298,11 +298,6 @@ class FileManagerRepository extends AbstractRepository implements FileManagerRep
         return $fileTransfers;
     }
 
-    /**
-     * @param int $idFile
-     *
-     * @return int
-     */
     public function getFileInfoVersionsCount(int $idFile): int
     {
         return $this->getFactory()
@@ -311,11 +306,6 @@ class FileManagerRepository extends AbstractRepository implements FileManagerRep
             ->count();
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\FileCriteriaTransfer $fileCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\FileCollectionTransfer
-     */
     public function getFileCollection(FileCriteriaTransfer $fileCriteriaTransfer): FileCollectionTransfer
     {
         $fileCollectionTransfer = new FileCollectionTransfer();
@@ -333,12 +323,6 @@ class FileManagerRepository extends AbstractRepository implements FileManagerRep
             ->mapFileEntitiesToFileCollectionTransfer($fileQuery->find(), $fileCollectionTransfer);
     }
 
-    /**
-     * @param \Orm\Zed\FileManager\Persistence\SpyFileQuery $fileQuery
-     * @param \Generated\Shared\Transfer\FileCriteriaTransfer $fileCriteriaTransfer
-     *
-     * @return \Orm\Zed\FileManager\Persistence\SpyFileQuery
-     */
     protected function applyFileFilters(SpyFileQuery $fileQuery, FileCriteriaTransfer $fileCriteriaTransfer): SpyFileQuery
     {
         $fileConditionsTransfer = $fileCriteriaTransfer->getFileConditions();
@@ -353,12 +337,6 @@ class FileManagerRepository extends AbstractRepository implements FileManagerRep
         return $fileQuery;
     }
 
-    /**
-     * @param \Orm\Zed\FileManager\Persistence\SpyFileQuery $fileQuery
-     * @param \Generated\Shared\Transfer\PaginationTransfer $paginationTransfer
-     *
-     * @return \Orm\Zed\FileManager\Persistence\SpyFileQuery
-     */
     protected function applyFilePagination(SpyFileQuery $fileQuery, PaginationTransfer $paginationTransfer): SpyFileQuery
     {
         $paginationTransfer->setNbResults($fileQuery->count());

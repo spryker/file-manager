@@ -33,9 +33,6 @@ class FileManagerMapper implements FileManagerMapperInterface
      */
     protected FileManagerToUtilEncodingServiceInterface $utilEncodingService;
 
-    /**
-     * @param \Spryker\Zed\FileManager\Dependency\Service\FileManagerToUtilEncodingServiceInterface $utilEncodingService
-     */
     public function __construct(FileManagerToUtilEncodingServiceInterface $utilEncodingService)
     {
         $this->utilEncodingService = $utilEncodingService;

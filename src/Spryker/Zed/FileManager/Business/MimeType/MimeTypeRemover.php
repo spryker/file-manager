@@ -18,9 +18,6 @@ class MimeTypeRemover implements MimeTypeRemoverInterface
      */
     protected $entityManager;
 
-    /**
-     * @param \Spryker\Zed\FileManager\Persistence\FileManagerEntityManagerInterface $entityManager
-     */
     public function __construct(FileManagerEntityManagerInterface $entityManager)
     {
         $this->entityManager = $entityManager;

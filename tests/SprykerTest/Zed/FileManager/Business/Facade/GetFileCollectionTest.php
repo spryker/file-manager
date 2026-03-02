@@ -31,9 +31,6 @@ class GetFileCollectionTest extends Unit
      */
     protected FileManagerBusinessTester $tester;
 
-    /**
-     * @return void
-     */
     public function testGetFileCollectionReturnsCollectionWithFiveFilesWhileHavingLimitOffsetPaginationApplied(): void
     {
         // Arrange
@@ -51,9 +48,6 @@ class GetFileCollectionTest extends Unit
         $this->assertCount(5, $fileCollectionTransfer->getFiles());
     }
 
-    /**
-     * @return void
-     */
     public function testGetFileCollectionFiltersByFileIds(): void
     {
         // Arrange

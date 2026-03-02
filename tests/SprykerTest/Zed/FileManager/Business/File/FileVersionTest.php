@@ -26,9 +26,6 @@ use Spryker\Zed\FileManager\Persistence\FileManagerRepositoryInterface;
  */
 class FileVersionTest extends Unit
 {
-    /**
-     * @return \Orm\Zed\FileManager\Persistence\SpyFile
-     */
     protected function getMockedFile(): SpyFile
     {
         $file = new SpyFile();
@@ -46,9 +43,6 @@ class FileVersionTest extends Unit
         return $this->getMockBuilder(FileManagerRepositoryInterface::class)->getMock();
     }
 
-    /**
-     * @return \Orm\Zed\FileManager\Persistence\SpyFileInfo
-     */
     protected function getMockedFileInfo(): SpyFileInfo
     {
         $fileInfo = new SpyFileInfo();
@@ -62,9 +56,6 @@ class FileVersionTest extends Unit
         return $fileInfo;
     }
 
-    /**
-     * @return void
-     */
     public function testGetNewVersionNumber(): void
     {
         $fileManagerRepositoryMock = $this->createFileManagerRepositoryMock();
@@ -78,9 +69,6 @@ class FileVersionTest extends Unit
         $this->assertSame(2, $fileVersion->getNextVersionNumber(1));
     }
 
-    /**
-     * @return void
-     */
     public function testGetNewVersionName(): void
     {
         $fileManagerRepositoryMock = $this->createFileManagerRepositoryMock();

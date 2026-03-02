@@ -32,11 +32,6 @@ class FileDirectorySaver implements FileDirectorySaverInterface
      */
     protected $attributesSaver;
 
-    /**
-     * @param \Spryker\Zed\FileManager\Persistence\FileManagerEntityManagerInterface $entityManager
-     * @param \Spryker\Zed\FileManager\Persistence\FileManagerRepositoryInterface $repository
-     * @param \Spryker\Zed\FileManager\Business\FileDirectoryLocalizedAttributes\FileDirectoryLocalizedAttributesSaverInterface $attributesSaver
-     */
     public function __construct(
         FileManagerEntityManagerInterface $entityManager,
         FileManagerRepositoryInterface $repository,
