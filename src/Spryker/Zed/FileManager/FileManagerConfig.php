@@ -36,4 +36,18 @@ class FileManagerConfig extends AbstractBundleConfig
     {
         return static::FILE_NAME_VERSION_DELIMITER;
     }
+
+    /**
+     * Specification:
+     * - Returns true if the UUID feature for file entities is enabled.
+     * - When enabled, the uuid column and unique index are added to spy_file table.
+     *
+     * @api
+     *
+     * @return bool
+     */
+    public function isUuidEnabled(): bool
+    {
+        return false;
+    }
 }

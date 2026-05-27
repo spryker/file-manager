@@ -10,7 +10,6 @@
         </foreign-key>
         <id-method-parameter value="spy_file_pk_seq"/>
     </table>
-
     <table name="spy_file_info">
         <column name="id_file_info" required="true" type="INTEGER" autoIncrement="true" primaryKey="true"/>
         <column name="fk_file" type="INTEGER" required="true"/>

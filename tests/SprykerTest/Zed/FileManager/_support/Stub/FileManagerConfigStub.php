@@ -40,4 +40,9 @@ class FileManagerConfigStub extends SprykerFileManagerConfig
 
         ];
     }
+
+    public function isUuidEnabled(): bool
+    {
+        return true;
+    }
 }

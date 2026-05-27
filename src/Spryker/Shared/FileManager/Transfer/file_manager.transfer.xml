@@ -10,6 +10,7 @@
 
     <transfer name="File">
         <property name="idFile" type="int"/>
+        <property name="uuid" type="string"/>
         <property name="fileName" type="string"/>
         <property name="fkFileDirectory" type="int"/>
         <property name="fileInfo" type="FileInfo[]" singular="fileInfo"/>
